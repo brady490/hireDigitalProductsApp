@@ -1,0 +1,17 @@
+<main>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="thumbnail">
+                <img src="{{product.productImage}}" alt="..."  width="250" height="250">
+                <div class="caption">
+                    <h3>{{ product.productId }} - {{ product.productName}} - {{ product.productCategory}}</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Product In Stock: {{ product.productStock}} </li>
+                        <li class="list-group-item">Product Price: {{ product.productPrice}} </li>
+                        <li class="list-group-item">Product Sale Price: {{ product.salePrice}} </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

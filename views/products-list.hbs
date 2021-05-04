@@ -1,0 +1,38 @@
+<div>
+    <div class="pull-right">
+        <a class="btn btn-primary" href="/products/add">
+            Add New Product
+        </a>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Product Category</th>
+            <th>Product Stock</th>
+            <th>Product Price</th>
+            <th>Sale Price</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            {{#each products}}
+            <tr>
+                <td>{{ this.productName }}</td>
+                <td>{{ this.productId }}</td>
+                <td>{{ this.productCategory }}</td>
+                <td>{{ this.productStock }}</td>
+                <td>{{ this.productPrice }}</td>
+                <td>{{ this.salePrice }}</td>
+                <td>
+                    <a class="btn btn-info mr-2" href="products/{{this.productId}}">
+                        View
+                    </a>
+                    <a class="btn btn-danger" href="products/edit/{{this.productId}}">
+                        Edit
+                    </a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,18 @@
+{
+  "name": "hiredigital-productsapp",
+  "version": "1.0.0",
+  "description": "a simple product listing app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.1",
+    "http": "0.0.1-security",
+    "routes": "^2.1.0"
+  }
+}

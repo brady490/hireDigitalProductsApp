@@ -1,0 +1,48 @@
+<main>
+    <h3>
+        Add New Product
+    </h3>
+    <div class="col-md-12">
+        <form action="/products/" method="POST">
+            <div class="form-control">
+                <label for="Name">Product Name</label>
+                <input type="text" name="name" id="Name">
+            </div>
+            <div class="form-control">
+                <label for="imageurl">Image url</label>
+                <input type="text" name="imageurl" id="imageurl">
+            </div>
+            <div class="form-control">
+                <label for="category">Product Category</label>
+                <input type="text" name="category" id="category">
+            </div>
+            <div class="form-control">
+                <label>Product Stock ?</label>
+                {{!-- <input type="text" name="stock" id="stock" value="{{product.productStock}}"> --}}
+
+                <input type="radio" name="stock" id="yes_stock" value="true">
+                <label for="yes_stock">Yes</label> 
+
+                <input type="radio" name="stock" id="no_stock" value="false">
+                <label for="no_stock">No</label> 
+
+            </div>
+            <div class="form-control">
+                <label for="productPrice">Product Price</label>
+                <input type="number" name="productPrice" id="productPrice">
+            </div>
+            <div class="form-control">
+                <label for="salePrice">Sale Price</label>
+                <input type="number" name="salePrice" id="salePrice">
+            </div>
+
+            <button type="button" class="btn btn-secondary" onclick="goBack()">
+                Cancel
+            </button>
+            <button class="btn" type="submit">
+                Add
+            </button>
+        </form>
+    </div>
+
+</main>
