@@ -6,10 +6,10 @@ const Users = require('../models/users');
 
 router.get('/', async (req, res, next) => {
   let userId = req.cookies && req.cookies["userId"] ? req.cookies["userId"] : undefined;
-  let products = await Product.getAll()
+  let products = await Product.getAll();
   res.render('products-list', {
     'products': products,
-    'recommended': Users.getRecommendedProducts(userId)
+    'recommended': await Users.getRecommendedProducts(userId)
   });
 });
 
@@ -18,9 +18,16 @@ router.get('/add', async (req, res, next) => {
   res.render('add-product')
 });
 
+// get view product page
 router.get('/:id', async (req, res, next) => {
   let product = await Product.getById(req.params.id);
   if (product) {
+    // log product viewed by an user
+    let userId = req.cookies && req.cookies["userId"] ? req.cookies["userId"] : undefined;
+    if (userId) {
+      Users.logProductView(userId, product["productId"])
+    }
+
     res.render('product-details', {
       'product': product
     })
