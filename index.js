@@ -6,7 +6,6 @@ const bodyParser = require('body-parser');
 const handlebar = require('express-handlebars');
 
 const app = express();
-
 app.engine('hbs', handlebar({
   layoutsDir: 'views/layouts/',
   defaultLayout: 'main',
@@ -15,6 +14,9 @@ app.engine('hbs', handlebar({
 
 app.set('view engine', 'hbs');
 app.set('views', 'views');
+
+var cookieParser = require('cookie-parser');
+app.use(cookieParser());
 
 // direct hit at port from browser
 app.use(bodyParser.urlencoded({ extended: false }))

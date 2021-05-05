@@ -2,12 +2,15 @@ const express = require('express');
 const router = express.Router();
 
 const Product = require('../models/products');
+const Users = require('../models/users');
 
 router.get('/', async (req, res, next) => {
+  let userId = req.cookies && req.cookies["userId"] ? req.cookies["userId"] : undefined;
   let products = await Product.getAll()
   res.render('products-list', {
-    'products': products
-  })
+    'products': products,
+    'recommended': Users.getRecommendedProducts(userId)
+  });
 });
 
 // get add page
